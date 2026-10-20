@@ -1,4 +1,4 @@
-# MyStore Buid w/ ANGULAR 19 
+# MyStore Buid w/ angular 21 
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.23.
 
