@@ -1,0 +1,44 @@
+<div class="show-mobile">
+  <div>
+    <button (click)="toggleMenu()">
+      <img src="./assets/images/home.gif" alt="" />
+    </button>
+    <a href="">
+      <img src="./assets/images/clock.gif" alt="logo" />
+    </a>
+    <a href="">
+      <img src="./assets/images/shopping cart.png" alt="logo" />
+    </a>
+  </div>
+  <div class="side-menu" [class.active]="activeMenu">
+    <button (click)="toggleMenu()">Close</button>
+    <ul>
+      <li><a href="All"></a>ALL</li>
+      <li><a href="Clothes">CLOTHES</a></li>
+      <li><a href="About">ABOUT</a></li>
+    </ul>
+  </div>
+</div>
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="" href="">
+        <img src="./assets/images/home.gif" alt="" />
+      </a>
+      <ul>
+        <li><a href="All"></a>ALL</li>
+        <li><a href="Clothes">CLOTHES</a></li>
+        <li><a href="About">ABOUT</a></li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="account">test@test.com</div>
+      <div>
+        <a href="">
+          <img src="./assets/images/shopping cart.png" alt="logo" />
+        </a>
+        <span class="counter">{{ counter }}</span>
+      </div>
+    </div>
+  </div>
+</div>

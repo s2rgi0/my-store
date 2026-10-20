@@ -1,0 +1,25 @@
+<p>
+    cantidad productos : {{ myShoppingCart.length }} total: ${{ total }}
+</p>
+<p>
+    total: ${{ total }}
+</p>
+<p>
+    today: {{ today | date: 'short'}}
+</p>
+<p>
+    today: {{ date | timeAgo}}
+</p>
+<p>
+    fecha: {{ date | date: 'yyyy...dd..MM'}}
+</p>
+<p>
+    {{ 'HoolA como Estan ' | uppercase}}
+</p>
+<br/>
+<div class="products--grid">
+    @for (p of products; track p.id) {
+        <app-product [product]="p" 
+        (addedProduct)="onAddToShoppingCart($event)"></app-product>
+    }
+</div>

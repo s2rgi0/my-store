@@ -1,0 +1,8 @@
+<!-- <h3>{{ counter() }}</h3> -->
+@if (img) {
+    <img width="200" (load)="imgLoaded()" (error)="imgError()" [src]="img">
+} @else { 
+    <img [src]="imageDefault" alt="">
+}
+
+
