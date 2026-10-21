@@ -23,12 +23,12 @@
   <div>
     <nav>
       <a [routerLink]="['/products']">
-        <img src="./assets/images/home.gif" alt="" />
+        <img src="./assets/images/home.gif" alt="Home" />
       </a>
       <ul>
-        <li><a href="All"></a>ALL</li>
-        <li><a href="Clothes">CLOTHES</a></li>
-        <li><a href="About">ABOUT</a></li>
+        <li><a [routerLink]="['/products']">ALL</a></li>
+        <li><a [routerLink]="['/products']">CLOTHES</a></li>
+        <li><a [routerLink]="['/products']">ABOUT</a></li>
       </ul>
     </nav>
     <div class="info">

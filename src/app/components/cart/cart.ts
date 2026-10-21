@@ -21,6 +21,8 @@ export class Cart implements OnInit {
   //cartProducts: Productos[] = [];
   groupedCartProducts: CartItemWithQuantity[] = [];
 
+  cartTotal: number = 0;
+
   private storeService = inject(Store);
 
   ngOnInit(): void {
@@ -35,6 +37,8 @@ export class Cart implements OnInit {
   private groupCartItems(products: Productos[]): CartItemWithQuantity[] {
     const map = new Map<string, CartItemWithQuantity>();
 
+    let totalAcumulado = 0;
+
     products.forEach(product => {
       if (map.has(product.id)) {
         const item = map.get(product.id)!;
@@ -47,9 +51,16 @@ export class Cart implements OnInit {
           total: product.price
         });
       }
+
+      totalAcumulado += product.price;
     });
+    this.cartTotal = totalAcumulado;
 
     return Array.from(map.values());
+  }
+
+  onRemoveItem(productId: string) {
+    this.storeService.removeProduct(productId);
   }
 
 

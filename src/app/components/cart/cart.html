@@ -16,16 +16,29 @@
             <h4>{{ item.product.title }}</h4>
             <p class="price">
               Price: {{ item.product.price | currency: 'USD' }}
-              <span class="quantity-badge">x{{ item.quantity }}</span>
+              <span class="quantity-badge"> qty.{{ item.quantity }}</span>
             </p>
           </div>
 
           <!-- Subtotal por fila -->
           <div class="item-meta">
             <p>Total: {{ item.total | currency: 'USD' }}</p>
+            <button class="remove-btn" (click)="onRemoveItem(item.product.id)">Remove</button>
           </div>
         </div>
       }
+    </div>
+    <!-- ─── NUEVA SECCIÓN DEL TOTAL GENERAL ─── -->
+    <br />
+    <div class="cart-summary">
+      <div class="summary-box">
+        <h3>Summary</h3>
+        <div class="summary-row">
+          <span>Order Total:</span>
+          <span class="grand-total">{{ cartTotal | currency: 'USD' }}</span>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
     </div>
   }
 </div>

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Product } from '../product/product';
 import { Productos } from '../../models/product.model';
 import { Store } from '../../services/store';
@@ -17,6 +17,7 @@ export class Products implements OnInit {
 
   private storeService = inject(Store);
   private productService = inject(Productsvrc);
+  private cdr = inject(ChangeDetectorRef);
 
   myShoppingCart: Productos[] = [];
   total = 0;
@@ -33,6 +34,8 @@ export class Products implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.products = data;
+
+        this.cdr.detectChanges();
       })
   }
 

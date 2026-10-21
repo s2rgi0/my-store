@@ -27,4 +27,21 @@ export class Store {
     return this.myShoppingCart.reduce((sum, item) => sum + item.price, 0);
   }
 
+  removeProduct(productId: string) {
+    const currentProducts = this.myCart.getValue();
+
+    // Encontramos el índice del primer producto que coincida con el ID
+    const index = currentProducts.findIndex(p => p.id === productId);
+
+    if (index !== -1) {
+      // Creamos una copia del arreglo original
+      const updatedProducts = [...currentProducts];
+      // Eliminamos únicamente ese elemento
+      updatedProducts.splice(index, 1);
+
+      // Emitimos la nueva lista actualizada al BehaviorSubject
+      this.myCart.next(updatedProducts);
+    }
+  }
+
 }
