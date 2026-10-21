@@ -22,7 +22,7 @@
 <div class="hide-mobile">
   <div>
     <nav>
-      <a class="" href="">
+      <a [routerLink]="['/products']">
         <img src="./assets/images/home.gif" alt="" />
       </a>
       <ul>
@@ -34,7 +34,7 @@
     <div class="info">
       <div class="account">test@test.com</div>
       <div>
-        <a href="">
+        <a [routerLink]="['/cart']">
           <img src="./assets/images/shopping cart.png" alt="logo" />
         </a>
         <span class="counter">{{ counter }}</span>

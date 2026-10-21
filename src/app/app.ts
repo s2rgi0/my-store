@@ -1,14 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Products } from './components/products/products';
 import { Nav } from './components/nav/nav';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Products, FormsModule, Nav],
+  imports: [RouterOutlet, FormsModule, Nav],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

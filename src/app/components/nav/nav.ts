@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '../../services/store';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './nav.html',
   styleUrl: './nav.scss',
 })
